@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(0, 102, 143);
+    background-color: rgb(0, 138, 192);
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -18,14 +18,26 @@ body{
     gap: 10px;
 }
 .enter-location input{
-    width: 300px;
+    width: 500px;
     height: 40px;
     font-size: 30px;
     text-align: center;
+    border: 1px solid rgb(0, 66, 104);
+    background-color: rgb(0, 82, 129);
+    border-radius: 10px;
+    color: white
 }
 .enter-location button{
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 66, 104);
+    background-color: rgb(0, 82, 129);
+    color: white;
+}
+.enter-location button:hover{
+    border: 1px solid rgb(0, 46, 73);
+    background-color: rgb(0, 46, 73);
 }
 .current-weather{
     display: flex;
@@ -34,11 +46,12 @@ body{
     justify-content: center;
 
     margin:30px auto;
+    min-width: 545px;
     max-width: fit-content;
 
     border: 1px solid rgb(1, 128, 179);
     border-radius: 20px;
-    background-color: rgb(1, 128, 179);
+    background-color: rgb(0, 107, 150);
 
     padding: 20px;
 }
@@ -49,11 +62,23 @@ body{
 .location-text,
 .feels-like{
     font-size: 40px;
+    text-align: center;
+}
+.location-country{
+    font-size: 35px;
 }
 .temperature{
     font-size: 60px;
 }
-.weather-icon{
-    height: 128px;
-    width: 128px;
+.high-low{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding:0;
+    margin: 0;
+}
+.high-low h4{
+    font-size: 30px;
+    padding:0;
+    margin: 0;
 }
