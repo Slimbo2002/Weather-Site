@@ -39,12 +39,14 @@ body{
     border: 1px solid rgb(0, 46, 73);
     background-color: rgb(0, 46, 73);
 }
-.current-weather{
+.weather-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    text-align: center;
+}
+.current-weather{
     margin:30px auto;
     min-width: 545px;
     max-width: fit-content;
@@ -73,6 +75,7 @@ body{
 .high-low{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
     padding:0;
     margin: 0;
@@ -82,3 +85,13 @@ body{
     padding:0;
     margin: 0;
 }
+.todays-forecast{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 40px;
+
+    background-color: rgb(0, 107, 150);
+    border-radius: 20px;
+}
+
