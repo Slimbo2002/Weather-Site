@@ -12,6 +12,8 @@ const lowText = document.querySelector('#low');
 
 const todayForecast = document.querySelector('#todays-forecast');
 
+const currentInput = "";
+
 
 async function GetCurrentWeather(location){
     const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`);
@@ -24,16 +26,16 @@ async function GetForecastWeather(location){
     return data;
 }
 async function UpdateUI(){
+
+    todayForecast.innerHTML = "";
+
     let location = locationInput.value;
     let currentWeather = await GetCurrentWeather(location);
     let forecastWeather = await GetForecastWeather(location);
     let currentTime = new Date().getHours();
 
-    console.log(forecastWeather);
-    
-
     currentLocation.textContent = currentWeather.location.name + ", " + currentWeather.location.region;
-    temperature.textContent = currentWeather.current.temp_c + "°";
+    temperature.textContent = Math.round(currentWeather.current.temp_c) + "°";
     feelsLike.textContent = "Feels Like: " + currentWeather.current.feelslike_c + "°";  
 
     let todaysForecast = forecastWeather.forecast.forecastday[0];
@@ -63,7 +65,7 @@ async function UpdateUI(){
             <div class = "weather-card">
                 <h3>${formattedTime}</h3>
                 <img src ="${currentSubject.condition.icon}" height="64" width="64">
-                <h3>${Math.round(currentSubject.temp_c)}</h3>
+                <h3>${Math.round(currentSubject.temp_c)}°</h3>
             </div>
             `
             displayedHours++;
