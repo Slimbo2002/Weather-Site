@@ -1,3 +1,4 @@
+const key = "a210a163b6f041b7b6a204824262311";
 
 const locationInput = document.querySelector('#location-input');
 const goButton = document.querySelector("#go-button");
@@ -14,13 +15,13 @@ const todayForecast = document.querySelector('#todays-forecast');
 const currentInput = "";
 
 
-async function GetCurrentWeather(location) {
-    const res = await fetch(`/weather?location=${encodeURIComponent(location)}`);
+async function GetCurrentWeather(location){
+    const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`);
     const data = await res.json();
     return data;
 }
 async function GetForecastWeather(location){
-    const res = await fetch(`/forecast?location=${encodeURIComponent(location)}`);
+    const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}`);
     const data = await res.json();
     return data;
 }
